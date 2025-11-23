@@ -1,0 +1,110 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; 
+    font-family: 'Georgia', serif;
+}
+
+
+body {
+    background-image: url("../img/newback.jpg"); 
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+.artist-img {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.items {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;           
+}
+
+.item {
+  display: flex;
+  align-items: center;     
+  gap: 20px;               
+}
+
+#album-image {
+  width: 300px;            
+  height: auto;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.items {
+  display: flex;
+  flex-direction: row; 
+  gap: 30px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.item:hover {
+  transform: scale(1.02);
+}
+
+.item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info h2, .info h3, .info h4 {
+  margin: 5px 0;
+}
+
+
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

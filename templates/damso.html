@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albums de Damso</title>
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+  <main>
+    <a class="close" href="/"></a>
+    <div class="items" id="albums-container">
+     
+    </div>
+  </main>
+
+  <script>
+    fetch("/damso")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("albums-container");
+        container.innerHTML = ""; 
+
+        data.items.forEach(album => {
+          const albumDiv = document.createElement("div");
+          albumDiv.className = "item";
+
+          albumDiv.innerHTML = `
+            <img src="${album.images.length > 0 ? album.images[0].url : '/img/artist.jpg'}" alt="${album.name}">
+            <div class="info">
+              <h2>${album.name}</h2>
+              <h3>Date de sortie: ${album.release_date}</h3>
+              <h4>Nombre de musiques: ${album.total_tracks}</h4>
+            </div>
+          `;
+
+          container.appendChild(albumDiv);
+        });
+      })
+      .catch(err => console.error("Erreur API:", err));
+  </script>
+</body>
+
+</html>
